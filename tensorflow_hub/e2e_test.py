@@ -46,7 +46,6 @@ class End2EndTest(tf.test.TestCase):
     self.server_port = test_utils.start_http_server()
 
   def _stateless_module_fn(self):
-    """Simple module that squares an input."""
     x = tf_v1.placeholder(tf.int64)
     y = x*x
     hub.add_signature(inputs=x, outputs=y)
